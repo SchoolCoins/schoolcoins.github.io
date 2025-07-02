@@ -2,78 +2,90 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SchoolCoins - Aprende, Entrega y Gana</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
-    header, section, footer { padding: 20px; }
-    header { background-color: #4A90E2; color: white; text-align: center; }
-    nav a { margin: 0 10px; color: white; text-decoration: none; }
-    .cta { background-color: #50E3C2; color: white; padding: 10px 20px; border: none; cursor: pointer; text-decoration: none; }
-    footer { background-color: #f4f4f4; text-align: center; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SchoolCoins - Landing Page</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>SchoolCoins - Aprende, Entrega y Gana</h1>
-    <nav>
-      <a href="#que-es">¿Qué es?</a>
-      <a href="#beneficios">Beneficios</a>
-      <a href="#precios">Planes</a>
-      <a href="privacidad.html">Privacidad</a>
-      <a href="terminos.html">Términos</a>
-    </nav>
-    <a href="#demo" class="cta">Solicitar Demo</a>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-5">
+      <h1 class="text-2xl font-bold text-blue-600">SchoolCoins</h1>
+      <nav>
+        <a href="#about" class="mx-2 text-gray-700 hover:text-blue-600">Sobre Nosotros</a>
+        <a href="#features" class="mx-2 text-gray-700 hover:text-blue-600">Funcionalidades</a>
+        <a href="#terms" class="mx-2 text-gray-700 hover:text-blue-600">Términos</a>
+        <a href="#contact" class="mx-2 text-gray-700 hover:text-blue-600">Contacto</a>
+      </nav>
+    </div>
   </header>
 
-  <section id="que-es">
-    <h2>¿Qué es SchoolCoins?</h2>
-    <p>Plataforma educativa con gamificación para alumnos de primaria y secundaria. Permite a los profesores asignar tareas con códigos QR y recibir retroalimentación automática con IA.</p>
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-blue-600 to-green-500 text-white py-20 text-center">
+    <h2 class="text-4xl font-bold mb-4">Aprender Jugando, Crecer Logrando</h2>
+    <p class="text-lg mb-6">Una plataforma educativa que motiva a los estudiantes con recompensas virtuales</p>
+    <a href="#contact" class="bg-white text-blue-600 font-bold py-2 px-6 rounded-full inline-block shadow hover:bg-gray-100">¡Quiero Saber Más!</a>
   </section>
 
-  <section id="beneficios">
-    <h2>Beneficios</h2>
-    <ul>
-      <li>Para escuelas: Gestión moderna y reportes automáticos.</li>
-      <li>Para profesores: Más tiempo para enseñar.</li>
-      <li>Para alumnos: Feedback inmediato y posibilidad de ganar recompensas.</li>
+  <!-- About -->
+  <section id="about" class="py-16 container mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-4">¿Qué es SchoolCoins?</h3>
+    <p class="max-w-3xl mx-auto text-gray-700">SchoolCoins es una plataforma digital para que estudiantes suban sus tareas, reciban retroalimentación de sus profesores y ganen "schoolcoins" como incentivo. Así fomentamos la participación, la responsabilidad y el aprendizaje activo.</p>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-16 bg-gray-100">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-10">Funcionalidades Destacadas</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <i class="fas fa-upload text-4xl text-blue-600 mb-4"></i>
+          <h4 class="font-bold mb-2">Entrega de Tareas</h4>
+          <p>Los alumnos pueden subir sus tareas en diversos formatos y recibir retroalimentación detallada.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <i class="fas fa-coins text-4xl text-green-500 mb-4"></i>
+          <h4 class="font-bold mb-2">Recompensas Virtuales</h4>
+          <p>Los "schoolcoins" motivan a los estudiantes a cumplir y superar sus objetivos académicos.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <i class="fas fa-chalkboard-teacher text-4xl text-yellow-500 mb-4"></i>
+          <h4 class="font-bold mb-2">Gestión para Profesores</h4>
+          <p>Herramientas para calificar, dejar comentarios y monitorear el progreso de cada estudiante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms -->
+  <section id="terms" class="py-16 container mx-auto">
+    <h3 class="text-3xl font-bold mb-6 text-center">Términos y Condiciones</h3>
+    <p class="text-gray-700 mb-4">Al usar SchoolCoins, aceptas los siguientes términos:</p>
+    <ul class="list-disc pl-8 text-gray-700 space-y-2">
+      <li>Los schoolcoins no tienen valor monetario fuera de la plataforma.</li>
+      <li>Los estudiantes deben subir contenido original y respetar derechos de autor.</li>
+      <li>SchoolCoins puede modificar las reglas y funcionalidades sin previo aviso.</li>
+      <li>La plataforma puede recopilar y almacenar datos para fines educativos y de mejora del servicio.</li>
+      <li>SchoolCoins no se hace responsable por el contenido subido por los usuarios.</li>
     </ul>
+    <p class="text-gray-700 mt-4">Consulta la versión completa en nuestro portal o contáctanos para más información.</p>
   </section>
 
-  <section id="precios">
-    <h2>Planes y Precios</h2>
-    <table border="1" cellpadding="10">
-      <tr>
-        <th>Plan</th>
-        <th>Costo por Alumno/Mes</th>
-        <th>Ideal para</th>
-      </tr>
-      <tr>
-        <td>Basic</td>
-        <td>$2.00 USD</td>
-        <td>Escuelas pequeñas</td>
-      </tr>
-      <tr>
-        <td>Standard</td>
-        <td>$3.00 USD</td>
-        <td>Escuelas medianas</td>
-      </tr>
-      <tr>
-        <td>Premium</td>
-        <td>$500 USD/mes</td>
-        <td>Grandes instituciones</td>
-      </tr>
-    </table>
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-gray-100">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Contacto</h3>
+      <p class="mb-4">¿Tienes preguntas o quieres una demo?</p>
+      <a href="mailto:soporte@schoolcoins.com" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition">Escríbenos</a>
+    </div>
   </section>
 
-  <section id="demo">
-    <h2>Solicitar Demo</h2>
-    <p>Empieza a transformar la forma en que tu escuela aprende y crece con SchoolCoins.</p>
-    <a href="mailto:contacto@schoolcoins.io" class="cta">Solicitar Demo</a>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 SchoolCoins. Todos los derechos reservados.</p>
+  <!-- Footer -->
+  <footer class="bg-white py-6 text-center text-gray-500 text-sm">
+    &copy; 2025 SchoolCoins. Todos los derechos reservados.
   </footer>
+
 </body>
 </html>
