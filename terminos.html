@@ -1,159 +1,643 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Términos y Condiciones | SchoolCoins</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - SchoolCoins</title>
+    <style>
+        :root {
+            --primary-color: #4F46E5;
+            --secondary-color: #10B981;
+            --accent-color: #F59E0B;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #F9FAFB;
+            --bg-white: #FFFFFF;
+            --border-color: #E5E7EB;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content-wrapper {
+            background: var(--bg-white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-right: 1px solid var(--border-color);
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .sidebar h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .toc {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--text-light);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .toc a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(4px);
+        }
+
+        .main-content {
+            padding: 3rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: "⚠️";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--bg-white);
+            padding: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            border: 1px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #DBEAFE, #BFDBFE);
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .section-number {
+            background: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 2rem;
+            }
+            
+            .sidebar {
+                display: none;
+            }
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            z-index: 1000;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: var(--secondary-color);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
-
-  <header class="bg-white shadow-md">
-    <div class="container mx-auto flex items-center justify-between p-4">
-      <h1 class="text-2xl font-bold text-blue-600">SchoolCoins</h1>
-      <nav>
-        <a href="index.html" class="mx-2 text-gray-600 hover:text-blue-600">Inicio</a>
-        <a href="about.html" class="mx-2 text-gray-600 hover:text-blue-600">Sobre Nosotros</a>
-        <a href="contact.html" class="mx-2 text-gray-600 hover:text-blue-600">Contacto</a>
-      </nav>
+<body>
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
     </div>
-  </header>
 
-  <main class="container mx-auto px-4 py-8">
-    <h2 class="text-3xl font-semibold text-center mb-6">Términos y Condiciones</h2>
-    <section class="bg-white p-6 rounded shadow-md overflow-y-auto max-h-[80vh]">
-      <!-- Inserta aquí el texto legal completo -->
-      <p class="mb-4">
-        Bienvenido a <strong>SchoolCoins</strong>, una aplicación educativa integrada en la plataforma Discord diseñada para que profesores asignen tareas y alumnos las entreguen en formato de imágenes u otros archivos...
-      </p>
-      <p class="mb-4">
-Términos y Condiciones de Uso de la Aplicación SchoolCoins
-Última actualización: Julio 2025
-1. Aceptación de los Términos
-Bienvenido a SchoolCoins, una aplicación educativa integrada en la plataforma Discord diseñada para que profesores asignen tareas y alumnos las entreguen en formato de imágenes u otros archivos. Al acceder o utilizar SchoolCoins (en adelante, “la Plataforma”), usted (en adelante, “el Usuario”) declara que ha leído, entendido y aceptado sujetarse a los presentes Términos y Condiciones de Uso (en adelante, “Términos”). Si no está de acuerdo con estos Términos, deberá abstenerse de utilizar la Plataforma. Estos Términos constituyen un acuerdo legal vinculante entre el Usuario y los operadores de SchoolCoins. En caso de que el Usuario sea menor de edad, un padre, madre o tutor legal debe leer y aceptar estos Términos en representación del menor antes de que este utilice la Plataforma. Si el Usuario no cumple con los requisitos de edad mínima establecidos por Discord o con lo dispuesto en estos Términos, no podrá utilizar la Plataforma.
-2. Descripción de la Plataforma y Objeto
-SchoolCoins es un servicio educativo que funciona mediante un bot o aplicación dentro de Discord. Su propósito es facilitar la creación, envío y retroalimentación de tareas escolares de forma virtual. Los profesores pueden generar asignaciones y los alumnos pueden entregar sus tareas subiendo imágenes u otros contenidos a la Plataforma a través de Discord. La Plataforma también implementa un sistema de recompensas virtuales denominadas “SchoolCoins” que los alumnos pueden acumular y canjear por puntos extra u otros premios virtuales que el profesor defina en el entorno educativo. La Plataforma está enfocada en el uso por parte de comunidades educativas – específicamente profesores, alumnos y, en su caso, las instituciones escolares a las que pertenecen. SchoolCoins no es una red social general, sino una herramienta auxiliar para la gestión de tareas académicas, por lo que sus funciones están limitadas a las antes descritas. No existe dentro de la Plataforma la posibilidad de comunicación directa entre usuarios; cualquier comunicación necesaria entre profesor y alumno relacionada con las tareas deberá realizarse por los canales aprobados por la institución (por ejemplo, mediante Discord en canales designados, correo institucional, etc., pero no a través de un chat privado en la Plataforma, ya que SchoolCoins no ofrece servicios de mensajería entre usuarios).
-3. Ámbito Territorial y Ley Aplicable
-En la actualidad, SchoolCoins está disponible para usuarios ubicados en México, y el servicio se ofrece principalmente en territorio mexicano. Por lo tanto, estos Términos se rigen por las leyes vigentes en la Estados Unidos Mexicanos. El Usuario acepta que cualquier disputa o reclamación relacionada con la Plataforma se someterá a la jurisdicción de los tribunales competentes en México. Expansión Internacional: Si bien por ahora el servicio se limita a México, en el futuro SchoolCoins podría expandirse a usuarios en los Estados Unidos de América u otros países de Latinoamérica. En tal caso, SchoolCoins cumplirá con las regulaciones locales aplicables (por ejemplo, la Ley de Protección de la Privacidad Infantil en Internet – COPPA, por sus siglas en inglés, en Estados Unidos, u otras normativas de protección de datos personales y de menores en distintos países). Es posible que se requieran ajustes o adendas a estos Términos para usuarios de otras jurisdicciones, las cuales se comunicarán oportunamente. No obstante, hasta que se indiquen modificaciones específicas, el uso de la Plataforma fuera de México será bajo responsabilidad del Usuario, quien deberá asegurarse de cumplir con las leyes locales que le resulten aplicables.
-4. Elegibilidad de Usuario y Requisitos de Edad
-El uso de SchoolCoins está limitado a miembros de comunidades educativas, incluyendo:
-Docentes (Profesores): Personas mayores de edad (18 años o más) que actúan en calidad de profesores, instructores o personal autorizado de una institución educativa.
-Alumnos (Estudiantes): Personas que participan como estudiantes en una clase o institución educativa. Pueden ser menores de edad (por ejemplo, en rangos típicos de 12 a 15 años para nivel secundaria) o mayores de edad si corresponde a educación superior u otros niveles.
-Instituciones Educativas y Administradores Escolares: Representantes autorizados de escuelas, colegios u otras instituciones que implementen la Plataforma para sus alumnos y docentes. Esto puede incluir directivos, coordinadores o personal técnico autorizado.
-Requisito de Discord: Dado que SchoolCoins opera dentro de Discord, todos los Usuarios deberán contar con una cuenta válida de Discord y cumplir con los Términos de Servicio de Discord, incluyendo sus políticas de edad mínima. Nota: Por regla general, Discord requiere que los usuarios tengan al menos 13 años de edad (o la edad mínima aplicable en su país si esta es mayor) para crear una cuenta. SchoolCoins no tiene control sobre la creación de cuentas de Discord; por lo tanto, si un alumno es menor de 13 años, no podrá usar la Plataforma a menos que Discord, la institución educativa y la legislación aplicable lo permitan mediante mecanismos de consentimiento parental verificado. Es responsabilidad de los padres/tutores y de la institución asegurar que ningún menor use Discord y SchoolCoins en contravención de dichas políticas de edad. Consentimiento de Padres o Tutores: Para el caso de Usuarios menores de 18 años, se requiere el consentimiento expreso de sus padres, madres o tutores legales para usar SchoolCoins. Al permitir que un menor use la Plataforma, el padre/madre/tutor:
-Garantiza que es mayor de edad y tiene autoridad legal para actuar en representación del menor.
-Acepta estos Términos en nombre del menor y se responsabiliza del cumplimiento de los mismos por parte del menor.
-Reconoce y acepta que determinados datos del menor (por ejemplo, tareas enviadas, imágenes, identificación en Discord, y eventualmente su nombre dentro de la plataforma) serán procesados según lo descrito en estos Términos.
-Las instituciones educativas que implementen SchoolCoins se comprometen a obtener y verificar el consentimiento de los tutores de cada alumno menor de edad antes de permitirle usar la Plataforma. SchoolCoins se reserva el derecho de solicitar evidencia de dicho consentimiento en cualquier momento, especialmente si expandimos el servicio a jurisdicciones con requisitos legales específicos (por ejemplo, en EE.UU. podría requerirse un proceso de verificación de consentimiento parental conforme a COPPA para usuarios menores de 13). Si no se obtiene el consentimiento adecuado, o si el menor/no cumple la edad mínima, SchoolCoins podrá suspender o denegar el acceso del Usuario menor a la Plataforma.
-5. Registro y Acceso a la Plataforma
-Actualmente, SchoolCoins funciona como una aplicación dentro de Discord, por lo que no es necesario registrarse por separado en un sitio web externo. El acceso se realiza mediante la invitación o habilitación del bot de SchoolCoins en el servidor de Discord de la clase o institución educativa correspondiente. Una vez habilitado:
-Identificación del Usuario: La Plataforma reconoce a los Usuarios a través de su ID de Discord. Al interactuar con el bot (por ejemplo, enviando una tarea), SchoolCoins asociará esa actividad con su identificador único de Discord y, en la interfaz de la aplicación (visible para profesores y administradores autorizados), también podrá mostrar el nombre de usuario o apodo del alumno tal como aparece en Discord u otro identificador proporcionado por la escuela.
-Información de Cuenta: No se le solicitará al alumno que proporcione contraseñas ni información de inicio de sesión de Discord a SchoolCoins. La autenticación se maneja íntegramente por Discord. SchoolCoins nunca le pedirá credenciales personales fuera de los canales oficiales de Discord. Si alguien intenta suplantar a SchoolCoins pidiendo información personal sensible, el Usuario debe rechazarla y notificar al profesor o administrador.
-Perfil Educativo: En algunos casos, la institución o el docente podrían requerir que el alumno proporcione ciertos datos académicos para configurar la Plataforma (por ejemplo, nombre real, matrícula, grado o grupo escolar). Esa información, de proporcionarse, solo será utilizada internamente para la gestión de las tareas y para que el profesor identifique al alumno en la Plataforma. SchoolCoins no divulgará estos datos personales a terceros no autorizados, conforme a la sección de Privacidad más adelante.
-6. Uso Adecuado de la Plataforma
-Al usar SchoolCoins, el Usuario (ya sea profesor o alumno) se compromete a lo siguiente:
-Uso Educativo y No Comercial: Emplear la Plataforma únicamente para fines académicos y educativos relacionados con la asignación y entrega de tareas escolares. Queda estrictamente prohibido utilizar SchoolCoins con fines comerciales, publicitarios, de lucro personal, proselitismo o cualquier propósito ajeno al entorno educativo aprobado por la institución.
-Entrega de Tareas: Los alumnos subirán sus tareas en formato de imagen (fotografías de trabajos escritos, capturas de pantalla, escaneos de ejercicios, etc.) u otros formatos permitidos según las instrucciones del profesor. El alumno debe asegurarse de que el contenido enviado corresponde a la tarea solicitada y cumple con las indicaciones dadas por el docente. El profesor, por su parte, utilizará la Plataforma para recibir dichas tareas, revisarlas y eventualmente proporcionar retroalimentación o calificaciones a través del sistema.
-Sin Funcionalidades de Mensajería: Reconocer que SchoolCoins no es un medio de comunicación general entre usuarios. No existen salas de chat, foros ni mensajería privada dentro de la Plataforma. Los alumnos no pueden enviar mensajes a otros alumnos ni a profesores a través de SchoolCoins más allá de la funcionalidad de entregar sus tareas o recibir la retroalimentación automatizada/periódica. Cualquier intento de utilizar la Plataforma para comunicarse con otros usuarios de manera no prevista (por ejemplo, insertando mensajes ocultos dentro de las entregas de tareas con intención de que otros las vean) se considerará un uso indebido.
-Respeto a Discord y a la Comunidad: Cumplir con las normas de la comunidad de Discord y las reglas específicas del servidor escolar donde se implemente SchoolCoins. El Usuario debe comportarse de forma respetuosa y adecuada; cualquier conducta disruptiva, acoso, lenguaje inapropiado o violación de las reglas de la escuela dentro del contexto de Discord puede resultar en medidas disciplinarias por parte de la escuela, y en la suspensión del uso de SchoolCoins si corresponde.
-Prohibición de Contenido Inapropiado: No enviar a través de SchoolCoins ningún contenido que: (a) sea ilegal, violento, difamatorio, obsceno, discriminatorio o que contenga discurso de odio; (b) contenga información personal de terceras personas sin autorización (por ejemplo, datos de contacto, fotografías de personas que no han consentido ser fotografiadas, etc.); (c) infrinja derechos de autor u otros derechos de propiedad intelectual (por ejemplo, no subir material de terceros como libros escaneados o imágenes de internet protegidas, salvo que sea parte permitida de la tarea y se citen las fuentes según las reglas académicas); (d) contenga malware, virus o cualquier código dañino que pudiera afectar la Plataforma o los sistemas de terceros; o (e) en general, viole la ley, la moral, las buenas costumbres o los derechos de terceros.
-El incumplimiento de las normas de uso adecuado puede resultar en la eliminación del contenido infractor y la suspensión o terminación del acceso del Usuario a SchoolCoins, además de las posibles sanciones académicas impuestas por la institución educativa y acciones legales que pudieran ejercerse en casos graves.
-7. Derechos y Responsabilidades de los Profesores y Escuelas
-Los profesores y las instituciones educativas que utilicen SchoolCoins tienen las siguientes facultades y obligaciones:
-Configuración y Administración: El profesor o administrador escolar será quien añada el bot de SchoolCoins al servidor de Discord de la clase y configure las opciones necesarias (por ejemplo, crear los canales o comandos para subir tareas, definir las categorías de tareas, etc.). También son responsables de invitar a los alumnos autorizados y asegurarse de que cada alumno tenga la debida autorización de sus padres/tutores para participar.
-Moderación de Contenido: Si bien SchoolCoins proporciona un entorno automatizado, los profesores (y en su caso moderadores designados del servidor de Discord) deben supervisar el contenido que los alumnos suben. Esto incluye revisar las imágenes o archivos entregados para verificar que sean pertinentes a la tarea y que no violen las reglas antes mencionadas. La Plataforma puede ofrecer herramientas automáticas de revisión, pero la responsabilidad última de aprobar o rechazar un contenido recae en el profesor o la institución. Si un alumno sube contenido indebido, el profesor/escuela debe tomar las medidas adecuadas (por ejemplo, rechazar la entrega, reportar al alumno según las normas escolares, y si es necesario informar a los administradores de SchoolCoins para que se tomen acciones técnicas adicionales).
-Uso de Datos de Alumnos: Los profesores y escuelas se comprometen a usar los datos personales e información de las tareas de los alumnos obtenidos a través de SchoolCoins únicamente para fines educativos y evaluativos. Está prohibido utilizar estos datos con fines comerciales, publicarlos sin autorización o compartirlos con terceros fuera del entorno educativo, salvo que medie consentimiento o alguna base legal que lo permita (por ejemplo, compartir con padres del alumno su propio contenido, lo cual es natural; pero no con personas ajenas).
-Cumplimiento de Políticas: Los docentes e instituciones deben cumplir tanto con estos Términos como con sus propias políticas de privacidad y reglamentos escolares aplicables al manejo de información de alumnos. Por ejemplo, si la institución está sujeta a leyes de protección de datos personales (como la Ley Federal de Protección de Datos Personales en México, o FERPA en EE.UU., etc.), deberán asegurarse de tratar la información de los alumnos en conformidad con dichas leyes al usar la Plataforma. SchoolCoins facilita el medio, pero no exime a la institución de sus obligaciones legales independientes en el manejo de información estudiantil.
-Canje de SchoolCoins: Los profesores tendrán la discreción de definir los premios o incentivos que los alumnos podrán obtener a cambio de los puntos SchoolCoins acumulados (por ejemplo, puntos extra en calificaciones, reconocimientos virtuales, insignias, certificados, etc.). Es responsabilidad del profesor comunicar claramente a los alumnos qué recompensas están disponibles y bajo qué condiciones se otorgan. SchoolCoins como plataforma no define ni garantiza los premios; solo provee el sistema de puntos. La entrega efectiva de los beneficios educativos asociados (ejemplo: sumar puntos extra a la nota del alumno) depende del profesor/escuela.
-8. Sistema de Recompensas SchoolCoins
-La Plataforma incorpora un sistema de puntuación virtual denominado “SchoolCoins” a modo de incentivo educativo. A continuación se detallan las condiciones de este sistema:
-Acumulación de Puntos: Los alumnos pueden ganar SchoolCoins cumpliendo con ciertos criterios establecidos por el profesor o la Plataforma (por ejemplo, entregar tareas a tiempo, obtener buena calificación en una tarea, participar en actividades adicionales, etc.). La forma exacta de obtención de puntos podrá configurarse en la Plataforma según las preferencias del profesor o reglas de la escuela.
-Naturaleza de los Puntos: Los SchoolCoins no tienen valor monetario real. No son dinero, ni equivalen a moneda virtual convertible fuera de la Plataforma. Son simplemente un conteo de puntos con fines lúdicos o pedagógicos. En ningún caso representan una obligación de pago por parte de SchoolCoins o de la institución educativa.
-Canje por Recompensas: Los SchoolCoins acumulados por un alumno pueden ser canjeados únicamente por recompensas de carácter educativo o simbólico definidas por el profesor o la escuela. Por ejemplo, se podrían canjear por puntos extra en una calificación, por un reconocimiento público (como aparecer en un cuadro de honor virtual), por algún privilegio en clase (como elegir el siguiente tema de un proyecto) o por insignias/medallas virtuales dentro de la Plataforma. Las recompensas disponibles y la tasa de canje (cuántos SchoolCoins se requieren para cada premio) serán definidas por cada profesor/escuela dentro de lo que la Plataforma permita.
-No Transferibilidad: Los SchoolCoins son personales e intransferibles. Cada alumno acumula puntos en su cuenta asociada a su ID de Discord y no puede transferirlos ni venderlos a otros usuarios. Tampoco se permite la “compra” de SchoolCoins con dinero real; cualquier intento de comercializar los puntos virtuales va contra estos Términos y puede resultar en la anulación de los puntos y sanciones al usuario.
-Vencimiento o Ajuste de Puntos: La Plataforma o el profesor se reservan el derecho de ajustar el saldo de SchoolCoins de un alumno en caso de error, abuso o finalización del periodo escolar. Por ejemplo, si se detecta que un alumno obtuvo puntos de manera indebida (p. ej., explotando un fallo del sistema), SchoolCoins podrá corregir o eliminar dichos puntos. Asimismo, los puntos podrían tener validez limitada al ciclo escolar o curso en el que se otorgaron; el profesor o la escuela podrán “reiniciar” los conteos al iniciar un nuevo periodo, según las necesidades pedagógicas.
-Límite de Responsabilidad sobre Recompensas: SchoolCoins (la plataforma) no se hace responsable por el contenido, disponibilidad o entrega de las recompensas ofrecidas por los profesores. La Plataforma únicamente informa de la acumulación y canje de puntos, pero la materialización de la recompensa (ej. aplicar puntos extra en la nota o entregar un premio) es una cuestión manejada entre el profesor/escuela y el alumno. Cualquier disputa sobre una recompensa deberá resolverse entre el alumno y el profesor/escuela. No obstante, si hubiera un problema técnico en el registro de los SchoolCoins, SchoolCoins colaborará para solventarlo y reflejar correctamente la información, en la medida de lo posible.
-9. Propiedad Intelectual
-Propiedad de la Plataforma: SchoolCoins, incluyendo pero no limitado a la aplicación, el bot de Discord, el sitio web asociado (si lo hubiera), la marca, el logo, y todos los elementos de software, diseño y contenido proporcionados por la Plataforma, son propiedad de sus desarrolladores y titulares legales. Están protegidos por las leyes de propiedad intelectual aplicables. El hecho de que el Usuario use la Plataforma no le otorga ningún derecho de propiedad sobre la misma ni sobre sus componentes. El Usuario se compromete a no reproducir, distribuir, modificar, descompilar, realizar ingeniería inversa ni crear obras derivadas de la Plataforma salvo autorización expresa y por escrito de los titulares de SchoolCoins.
-Contenido de Usuario – Licencia de Uso: Los derechos de autor y propiedad intelectual sobre los contenidos que el Usuario (alumno o profesor) sube a la Plataforma, tales como las tareas, imágenes, documentos o cualquier aporte original, permanecen con el Usuario o con quien corresponda legalmente (por ejemplo, si un alumno sube una fotografía de un libro, ese libro puede tener derechos de un tercero; el alumno debe respetar esos derechos). Al subir o enviar contenido a través de SchoolCoins, el Usuario concede a la Plataforma y sus operadores una licencia de uso no exclusiva, mundial, libre de regalías, limitada al propósito de almacenar, reproducir y procesar dicho contenido con la única finalidad de prestar el servicio educativo (es decir, para que el profesor pueda ver la tarea, para que se pueda generar retroalimentación automática, para mostrarlo al propio alumno y a los autorizados, etc.). Esta licencia de uso termina cuando el contenido se elimina de la Plataforma, excepto en la medida en que debamos conservar copias de seguridad por un tiempo limitado o cumplir obligaciones legales.
-Referencias a Discord: Discord es una plataforma de terceros sobre la cual SchoolCoins funciona. Todas las marcas registradas, logos y derechos de Discord pertenecen a sus respectivos dueños (Discord Inc.). SchoolCoins no está afiliado oficialmente con Discord Inc., y su mención se realiza únicamente para identificar la interoperabilidad del servicio. El Usuario debe regirse por los términos de Discord al usar esa plataforma, además de los presentes Términos específicos de SchoolCoins.
-10. Privacidad y Protección de Datos
-La Privacidad de los usuarios, en especial tratándose de menores de edad, es de suma importancia para SchoolCoins. A continuación, se describe qué datos recopila la Plataforma y cómo son utilizados y protegidos:
-Datos Personales Recabados: SchoolCoins busca minimizar la información personal que recopila. Principalmente, procesamos:
-Identificador de Discord: El user ID numérico asociado a la cuenta de Discord del Usuario, así como su nombre de usuario y discriminador (por ejemplo, Juan#1234) y/o apodo en el servidor educativo. Esto se usa para vincular las tareas y puntos SchoolCoins con el Usuario correcto.
-Contenido de las Tareas: Las imágenes y archivos que los alumnos suben como entrega de sus tareas, así como cualquier comentario o texto que acompañe esas entregas.
-Metadatos de uso: Información relacionada con la actividad en la Plataforma, como fechas y horas de entregas, calificaciones otorgadas, puntos acumulados, canjes realizados, y registros de interacción con el bot (comandos utilizados, etc.).
-Datos opcionales: Información adicional que la escuela o el profesor ingresen en la Plataforma para gestionar la clase, por ejemplo, la asignación de un nombre real a un ID de Discord dentro de la interfaz (para que el profesor identifique a cada alumno por su nombre). Esa información proviene de la institución educativa, no de Discord ni del alumno directamente a SchoolCoins, y típicamente sería limitada (nombre, apellido, grado/grupo).
-Almacenamiento de Datos: Los datos e imágenes proporcionados a través de SchoolCoins se almacenan de forma segura en servicios en la nube controlados por los operadores de la Plataforma. En particular, las imágenes de tareas se guardan en un repositorio seguro (por ejemplo, en Amazon S3 u otro servicio de almacenamiento cloud de SchoolCoins). Dichas imágenes no son accesibles públicamente en internet; solo se accede a ellas a través de la Plataforma por usuarios autorizados (el alumno que la subió, su profesor, y eventualmente administradores escolares o de la plataforma con fines de soporte).
-Visibilidad de la Información: El nombre real del alumno, en caso de ser asociado a su cuenta, solo será visible para el propio alumno (en su perfil) y sus profesores/administradores dentro de la Plataforma. Los demás alumnos no pueden ver la información personal de sus compañeros a través de SchoolCoins. En los tableros o listas de clase que la Plataforma pueda mostrar (por ejemplo, un listado de entregas o de puntajes), los alumnos podrían ser identificados por su nombre de pila, iniciales o alias educativo según configuración, pero nunca se muestra información sensible como apellidos completos, direcciones, etc., a otros estudiantes.
-Uso de Información Personal: La información recopilada se utiliza exclusivamente para los fines del servicio: facilitar la entrega de tareas, proveer retroalimentación, llevar el registro de puntos SchoolCoins, mejorar la experiencia educativa y, en general, cumplir con la funcionalidad ofrecida. SchoolCoins no vende, alquila ni comparte datos personales de los alumnos o profesores con anunciantes ni con terceros ajenos al servicio. Los únicos terceros que podrían tener acceso son aquellos proveedores de servicios que ayudan a operar la Plataforma, bajo estrictas obligaciones de confidencialidad y únicamente en la medida necesaria (por ejemplo, el proveedor de almacenamiento en la nube donde se alojan las imágenes, o el servicio de inteligencia artificial que analiza el contenido, como se detalla más abajo). Estos proveedores no están autorizados a usar los datos para otros fines.
-Conservación de Datos: Los datos personales y contenidos de tareas se conservarán mientras sean necesarios para el propósito educativo para el cual fueron recopilados. En términos prácticos, esto suele ser durante el ciclo escolar o curso en el que el alumno está usando SchoolCoins, y un tiempo adicional razonable por si el profesor necesita revisar historiales o por requerimientos legales/administrativos. Pasado ese periodo, la institución o el propio alumno pueden solicitar la eliminación de sus datos y contenidos. SchoolCoins podrá anonimizar o eliminar datos que ya no sean necesarios. No obstante, ciertos registros mínimos podrán conservarse en copias de seguridad por un período limitado o en cumplimiento de obligaciones legales (por ejemplo, registros de otorgamiento de consentimientos, datos necesarios para resolver disputas, etc.).
-Derechos ARCO y otros derechos de privacidad: De conformidad con la legislación mexicana de protección de datos personales (LFPDPPP) y otras leyes aplicables, los titulares de los datos (o sus padres/tutores en el caso de menores) podrán ejercer sus derechos de Acceso, Rectificación, Cancelación y Oposición (ARCO) respecto a sus datos personales en posesión de SchoolCoins. Esto significa que en cualquier momento pueden solicitar: (a) saber qué información suya tenemos y cómo se utiliza (Acceso); (b) corregir o actualizar datos que sean inexactos o estén desactualizados (Rectificación); (c) pedir la supresión de sus datos cuando consideren que no se requieren para el fin original o retiren el consentimiento, etc. (Cancelación); y/o (d) oponerse a un uso específico de sus datos, por ejemplo, para fines secundarios no esenciales (Oposición). Para ejercer estos derechos, el Usuario o su tutor puede contactar a SchoolCoins a través de los canales de contacto indicados al final de estos Términos, proporcionando su identidad y el detalle de la solicitud. SchoolCoins responderá conforme a los plazos y procedimientos legales vigentes. Tenga en cuenta que para ciertos datos básicos (como el ID de Discord necesario para la operatividad) la cancelación podría implicar la imposibilidad de seguir usando la Plataforma. Además, si algún dato personal es administrado principalmente por la institución educativa (por ejemplo, el nombre real asociado a un alumno), SchoolCoins podría referir la solicitud a la institución para su atención, según corresponda.
-Menores de Edad y Privacidad: Dado que muchos usuarios pueden ser menores, SchoolCoins toma medidas adicionales de protección. No recopilamos deliberadamente más información personal de la necesaria para el propósito educacional. Los padres y tutores tienen derecho a solicitar en cualquier momento la revisión o eliminación de los datos personales del menor bajo su tutela recolectados por la Plataforma. Si un padre o tutor nos informa que un menor menor de 13 años ha utilizado la Plataforma sin el debido consentimiento, tomaremos acciones para eliminar o anonimizar los datos de ese menor de nuestros registros, conforme a la ley.
-Seguridad de la Información: La seguridad de los datos es una prioridad. SchoolCoins implementa medidas técnicas y organizativas adecuadas para proteger la información personal contra acceso no autorizado, alteración, pérdida o divulgación indebida. Estas medidas incluyen, entre otras, conexión segura a Discord mediante token, almacenamiento cifrado o protegido de imágenes en la nube, controles de acceso restringido a la base de datos de identificadores, y monitoreo de la Plataforma para detectar actividades inusuales. Sin embargo, ningún sistema es completamente invulnerable; por ello, SchoolCoins no puede garantizar seguridad absoluta. El Usuario entiende los riesgos inherentes de transmitir información a través de medios digitales y acepta utilizarlos bajo su propio riesgo, aunque SchoolCoins se compromete a notificarlo de inmediato en caso de detectarse cualquier violación de seguridad que comprometa sus datos, y a tomar las medidas correctivas necesarias.
-Política de Cookies y Tecnologías Similares: En la medida en que SchoolCoins tenga alguna interfaz web complementaria o utilice integraciones con Discord, puede emplear cookies u otras tecnologías para mantener la sesión del usuario o para proveer ciertas funcionalidades. En la actualidad, la interacción es principalmente vía Discord, que tiene sus propias prácticas de cookies en su aplicación/web. SchoolCoins no inserta cookies de seguimiento publicitario ni nada similar para los usuarios; solo podría usar almacenamiento local o identificadores de sesión si se habilita un portal web de apoyo. Se informará al Usuario en caso de implementarse dichas tecnologías de manera significativa, respetando siempre la privacidad.
-Para información más detallada sobre privacidad, por favor consulte nuestra Política de Privacidad separada, si está disponible, la cual complementa estos Términos. (En caso de contradicción, se aplicará la disposición que brinde mayor protección al usuario).
-11. Procesamiento Automatizado y Uso de Inteligencia Artificial
-Una característica destacada de SchoolCoins es que proporciona retroalimentación automática en las tareas mediante un sistema de inteligencia artificial. Al subir una tarea (por ejemplo, una foto de un ejercicio matemático o de un texto escrito), la Plataforma puede procesar esa imagen utilizando algoritmos de aprendizaje automático y servicios de inteligencia artificial de terceros para generar comentarios, evaluaciones preliminares o sugerencias que ayuden al estudiante a mejorar. Es importante entender lo siguiente:
-Sistema Externo de Revisión: Las imágenes y contenidos que el alumno entrega pueden ser enviadas a un servicio automatizado externo que asiste en el análisis del contenido. En particular, SchoolCoins podría utilizar tecnología de IA como ChatGPT (OpenAI) u otros modelos similares para interpretar la tarea y generar una retroalimentación inicial. Por ejemplo, si la tarea es una redacción, la IA podría generar comentarios sobre la gramática; si es un problema, podría intentar identificar si la respuesta es correcta o explicar el procedimiento.
-Consentimiento para Análisis Automático: Al usar la Plataforma y subir contenidos, el Usuario da su consentimiento para que sus entregas sean procesadas de forma automatizada por estas herramientas de IA. Este procesamiento tiene el único fin de brindar un apoyo educativo (no se usa para publicidad ni se comparte públicamente). Los padres/tutores de menores entienden y consienten que las tareas del menor serán analizadas por un sistema de inteligencia artificial como parte del servicio.
-Privacidad en el Proceso: SchoolCoins toma medidas para proteger la privacidad durante este análisis. En la medida de lo posible, se envía la menor cantidad de datos personales a los sistemas de IA. Normalmente, solo se envía el contenido de la tarea en sí (por ejemplo, la imagen del cuaderno o el texto de la tarea) sin metadatos que identifiquen al alumno. El análisis se concentra en el contenido académico. Los proveedores de IA utilizados están contractualmente o técnicamente limitados para no usar permanentemente ni divulgar ese contenido para fines ajenos al servicio. No obstante, al ser servicios de terceros, SchoolCoins no puede garantizar al 100% sus prácticas, aunque seleccionará proveedores confiables con buenas políticas de privacidad (por ejemplo, OpenAI tiene políticas que restringen el uso secundario de los datos enviados a sus API).
-Calidad y Límites de la IA: La retroalimentación proporcionada por la inteligencia artificial es orientativa y podría no ser perfecta. Si bien la IA es una herramienta potente, no reemplaza la evaluación humana. Siempre será el profesor quien tenga la última palabra en la calificación y en la retroalimentación oficial de la tarea. Los alumnos deben usar los comentarios automáticos como una ayuda adicional, pero entender que podría haber errores o malentendidos por parte de la IA. SchoolCoins no garantiza que las sugerencias o evaluaciones generadas automáticamente sean 100% correctas, completas o adecuadas. El Usuario (y en especial el profesor) son responsables de revisar críticamente dicha retroalimentación.
-No Dependencia Absoluta: El uso de la IA en la Plataforma no implica que un alumno será evaluado únicamente por una máquina. La Plataforma simplemente intenta agilizar el proceso y ofrecer ayuda. Los profesores pueden optar por desactivar o ignorar la retroalimentación automática si así lo desean, y basar su evaluación solo en su criterio profesional.
-Mejora del Servicio: SchoolCoins podría almacenar de forma anonimizada algunos resultados de las interacciones de la IA con las tareas, con el fin de mejorar el sistema (por ejemplo, para entrenar modelos internos que detecten cierto tipo de error común y den mejores consejos). Sin embargo, esto se haría preservando la privacidad (eliminando cualquier referencia a identidad) y en conformidad con las leyes aplicables.
-Al continuar usando SchoolCoins, el Usuario reconoce que comprende este proceso automatizado y acepta su inclusión como parte del servicio educativo.
-12. Disponibilidad del Servicio y Exención de Responsabilidad
-SchoolCoins se esfuerza por ofrecer un servicio confiable y disponible la mayor parte del tiempo, pero el Usuario debe tener en cuenta las siguientes cuestiones:
-Dependencia de Discord: Dado que la Plataforma opera dentro de Discord, su disponibilidad está sujeta tanto al funcionamiento de SchoolCoins en sí como a la disponibilidad de la red de Discord. SchoolCoins no puede garantizar que Discord esté libre de fallos, caídas o suspensiones de servicio. Por tanto, puede haber ocasiones en que SchoolCoins no funcione temporalmente debido a problemas en Discord (por ejemplo, mantenimiento de Discord, fallas en sus servidores, cambios en su API, o incluso suspensión de la cuenta/bot de SchoolCoins por parte de Discord por alguna razón). SchoolCoins no será responsable por las interrupciones del servicio causadas por terceros o fuera de su control razonable. Sin embargo, en la medida de lo posible, informaremos a los usuarios cuando haya mantenimientos programados o incidencias conocidas.
-Interrupciones y Mantenimiento: SchoolCoins podrá suspender temporalmente el servicio por razones de mantenimiento, actualización del sistema, mejoras o por problemas técnicos imprevistos. Cuando sea planeado, se procurará notificar con antelación a los profesores (por ejemplo, vía mensaje en Discord o correo electrónico registrado, si hubiera). En casos de emergencia (por ejemplo, una falla de seguridad crítica), es posible que debamos suspender inmediatamente sin previo aviso para proteger los datos. En ningún caso SchoolCoins será responsable ante el Usuario por pérdidas de datos de tareas o puntos debido a interrupciones; recomendamos que los alumnos conserven copias locales de sus tareas antes de subirlas y que los profesores, si es crítico, descarguen o anoten las calificaciones importantes.
-Exactitud de la Información: Aunque se intenta que toda información mostrada en la Plataforma (como calificaciones, conteo de puntos, confirmación de entregas, etc.) sea correcta y esté actualizada, podría haber errores técnicos. El Usuario (especialmente los profesores) deben verificar la información importante. Si detectan discrepancias (por ejemplo, un alumno asegura haber enviado una tarea pero la Plataforma no la muestra), deben comunicarlo al soporte de SchoolCoins o revisar registros para aclararlo. SchoolCoins no asume responsabilidad legal por perjuicios derivados de datos mostrados erróneamente, pero se compromete a corregir los errores confirmados en el sistema tan pronto como sea posible.
-Exención de Garantías: En la medida en que la ley lo permita, SchoolCoins se proporciona “tal cual” (“as is”) y “según disponibilidad”, sin garantías explícitas ni implícitas de ningún tipo. No garantizamos que el servicio cumpla con todas las expectativas del Usuario, ni que los resultados obtenidos (por ejemplo, la retroalimentación de la IA, la mejora en desempeño académico, etc.) sean exactamente los esperados. Tampoco garantizamos que la Plataforma esté libre de errores, vulnerabilidades o que se corregirán todos los defectos. Aunque trabajamos para ofrecer el mejor servicio posible, el Usuario asume el riesgo de su uso.
-Limitación de Responsabilidad: Bajo ninguna circunstancia los operadores de SchoolCoins serán responsables por daños indirectos, especiales, incidentales o consecuentes que resulten del uso o la imposibilidad de uso de la Plataforma, incluidos pero no limitados a la pérdida de oportunidades académicas, daños por la obtención de calificaciones bajas, pérdida o corrupción de datos (p. ej., tareas no entregadas por fallos), o daños por brechas de seguridad inadvertidas. La responsabilidad total acumulada de SchoolCoins hacia un Usuario, por cualquier concepto, se limita en todo caso al monto de $0 MXN, dado que el servicio normalmente se ofrece de forma gratuita para el alumno (o, si la escuela paga una suscripción o licencia, la responsabilidad total se limitará al importe efectivamente abonado por la institución a SchoolCoins por el periodo en el cual ocurrió el evento dañoso). Lo anterior no pretende excluir ni limitar cualquier responsabilidad que no pueda ser legalmente excluida o limitada según las leyes aplicables (por ejemplo, en caso de dolo o culpa grave de SchoolCoins, o derechos irrenunciables del consumidor bajo ciertas jurisdicciones).
-No Relación Laboral ni Garantía Educativa: SchoolCoins es una herramienta auxiliar y no garantiza por sí misma mejora en calificaciones ni éxito académico. Los resultados académicos dependen de múltiples factores fuera del control de la Plataforma (esfuerzo del estudiante, calidad de la enseñanza, etc.). SchoolCoins tampoco sustituye la labor del profesor ni establece relación laboral o contractual directa con los alumnos; la interacción principal es entre alumno y profesor, siendo la Plataforma un intermediario tecnológico.
-13. Suspensión y Terminación de la Cuenta
-SchoolCoins se reserva el derecho de suspender temporalmente, deshabilitar o terminar definitivamente el acceso de un Usuario a la Plataforma bajo las siguientes circunstancias, de forma enunciativa pero no limitativa:
-Violación de Términos: Si el Usuario incumple cualquiera de las disposiciones de estos Términos (por ejemplo, uso indebido, contenido prohibido, intentos de vulnerar la seguridad del sistema, etc.), SchoolCoins podrá bloquear su acceso. En el caso de un alumno, esto generalmente se hará en coordinación con el profesor/escuela, excepto en situaciones graves que requieran acción inmediata (por ejemplo, distribución de malware o contenido ilegal donde se detendrá el acceso de inmediato y luego se notificará a la escuela).
-Requerimiento Legal o de Discord: Si recibimos un requerimiento por parte de autoridades legales competentes para suspender cierta cuenta o actividad (por ejemplo, una investigación judicial) lo haremos conforme a la ley. Asimismo, si Discord nos notifica que un Usuario ha sido expulsado o prohibido de Discord, o que nuestra aplicación ya no puede operar para ese usuario, acataremos esa restricción, ya que escapa de nuestro control.
-Cierre de Servicio: En caso de que, por decisión empresarial o por falta de viabilidad, SchoolCoins deba cerrar o descontinuar el servicio en su totalidad, nos reservamos el derecho de terminar todos los accesos. En tal escenario, se procurará avisar con antelación razonable a las instituciones y usuarios (por ejemplo, con 30 días de anticipación) para que puedan descargar cualquier información necesaria (como historial de tareas o registro de puntos). Si la terminación del servicio se debe a circunstancias fuera de control (ej. cese inesperado de operaciones, quiebra, desastre tecnológico), es posible que el aviso no sea posible, pero se hará el mejor esfuerzo para comunicarlo tan pronto como sea factible.
-Inactividad Prolongada: Si un servidor de clase o un usuario en particular permanece inactivo en la Plataforma por un periodo muy prolongado (por ejemplo, más de 12 meses sin uso), SchoolCoins podría archivar o eliminar la información asociada para liberar recursos. Antes de eliminar datos por inactividad de una clase, se intentará contactar al profesor o institución. Los usuarios individuales inactivos no suelen ser eliminados mientras la clase esté activa, pero una vez graduados o finalizada la relación con la escuela, sus datos podrían eventualmente ser eliminados conforme a la política de conservación mencionada en la sección de Privacidad.
-En todos los casos anteriores, la suspensión o terminación del acceso del Usuario a SchoolCoins no exime al Usuario (o a la institución en su caso) de las obligaciones asumidas previamente bajo estos Términos en lo que respecta a responsabilidades por actos pasados (por ejemplo, no elimina la posibilidad de que la escuela tome acciones disciplinarias si el alumno hizo mal uso, ni elimina cualquier obligación de confidencialidad, etc., que sobreviva a la terminación). Asimismo, SchoolCoins tampoco estará obligado a reembolsar cantidad alguna (si es que hubo un pago por suscripción) en caso de terminación justificada por violación a los Términos por parte del Usuario.
-14. Modificaciones a los Términos y Condiciones
-SchoolCoins puede realizar modificaciones, adiciones o actualizaciones a estos Términos de vez en cuando, por ejemplo, para adaptarse a cambios en la legislación, agregar nuevas funciones a la Plataforma o atender nuevas circunstancias operativas. Cuando eso ocurra:
-Se publicará la versión actualizada de los Términos (indicando la fecha de la última actualización al inicio del documento).
-Si los cambios son significativos o afectan los derechos y obligaciones del Usuario de manera sustancial, se notificará a los Usuarios de forma apropiada. Esto puede ser a través de un anuncio en el servidor de Discord de la clase, un mensaje directo del bot, un correo electrónico a los administradores escolares, o mediante la página web oficial de SchoolCoins.
-Los cambios entrarán en vigor a partir de su publicación, salvo que especifiquemos una fecha posterior. Si un Usuario continúa utilizando la Plataforma después de que los nuevos Términos entren en vigor, se entenderá que ha leído y aceptado dichos cambios. Si el Usuario (o el padre/tutor, en su caso) no está de acuerdo con las modificaciones, deberá discontinuar el uso de SchoolCoins y podrá solicitar la cancelación/eliminación de sus datos según lo previsto en la sección de Privacidad.
-Cabe mencionar que estos Términos y Condiciones estarán siempre disponibles para consulta. Recomendamos a los Usuarios revisarlos periódicamente y especialmente estar atentos a las comunicaciones de cambios importantes. La versión en español de estos Términos es la versión legalmente vinculante; cualquier traducción que se facilite sería solo para referencia y en caso de discrepancia prevalecerá el texto en español.
-15. Disposiciones Generales
-Relación con el Usuario: Estos Términos no crean ninguna relación de sociedad, agencia, empleo o franquicia entre SchoolCoins y el Usuario, ya sea este alumno, profesor o institución. La utilización de la Plataforma se da en el marco de un acuerdo de prestación de servicio tecnológico. El profesor y la institución actúan independientemente en su rol educativo; SchoolCoins no es responsable de las calificaciones otorgadas ni de las decisiones académicas tomadas por la institución.
-Cesión de Derechos: El Usuario no podrá ceder ni transferir sus derechos u obligaciones bajo estos Términos sin el consentimiento previo por escrito de SchoolCoins. SchoolCoins, en cambio, podrá ceder los derechos y obligaciones derivados de estos Términos a una filial, subsidiaria, entidad sucesora o en el contexto de una fusión o adquisición de la Plataforma, siempre que ello no reduzca las protecciones de datos ni los derechos del Usuario.
-Nulidad Parcial: Si alguna cláusula de estos Términos se considerase inválida, ilegal o inexigible por una autoridad competente, dicha disposición se interpretará de la manera más cercana posible a la intención original de las partes, pero ajustada a la legalidad. Las demás disposiciones del contrato permanecerán en pleno vigor y efecto.
-Idioma: Estos Términos y Condiciones están redactados en idioma español. Cualquier traducción a otro idioma será únicamente con fines informativos. En caso de existir discrepancias entre la versión en español y una versión traducida, prevalecerá la versión en español.
-Acuerdo Completo: Estos Términos (junto con cualquier documento adicional al que se haga referencia, como la Política de Privacidad) constituyen el acuerdo íntegro entre el Usuario y SchoolCoins en relación con el uso de la Plataforma, y reemplazan cualquier acuerdo o entendimiento previo, ya sea oral o escrito, relativo a este mismo objeto.
-No Renuncia: La falta o demora de SchoolCoins en ejercer cualquier derecho o hacer cumplir una disposición de estos Términos no se interpretará como una renuncia a dicho derecho o disposición. La renuncia válida en un caso específico deberá ser por escrito y no implica que se renuncie automáticamente en casos futuros.
-16. Contacto y Soporte
-Para cualquier duda, comentario, solicitud o ejercicio de derechos relacionados con estos Términos o con el funcionamiento de SchoolCoins, los Usuarios (o sus padres/tutores) y las instituciones educativas pueden ponerse en contacto con el equipo de SchoolCoins a través de los siguientes medios:
-Correo electrónico de soporte: support@schoolcoins.app (Ejemplo)
-Servidor de Discord de soporte: [Enlace al servidor de soporte de SchoolCoins] (si existiera)
-Otro medio de contacto: [Número de teléfono o dirección física si aplica]
-Por favor, al contactarnos, proporcione información suficiente para identificar su cuenta o vínculo con la institución (por ejemplo, el ID de Discord, el nombre de la escuela, etc.) junto con la descripción clara de su consulta o problema, para que podamos asistirlo de manera más efectiva.
-Al utilizar la aplicación SchoolCoins, usted reconoce que ha leído, comprendido y aceptado estos Términos y Condiciones de Uso en su totalidad. Agradecemos su confianza y nos comprometemos a brindar una herramienta útil y segura para apoyar la educación de la comunidad escolar en la plataforma Discord. ¡Bienvenido a SchoolCoins y mucho éxito en sus actividades académicas!      </p>
-      <!-- Puedes seguir con el resto del documento completo pegado aquí -->
-    </section>
-  </main>
+    <div class="container">
+        <div class="hero">
+            <h1>📚 SchoolCoins</h1>
+            <p>Términos y Condiciones de Uso</p>
+        </div>
 
-  <footer class="bg-gray-100 mt-12 py-6 text-center text-gray-600">
-    <div class="container mx-auto">
-      <p>&copy; 2025 SchoolCoins. Todos los derechos reservados.</p>
-      <div class="flex justify-center mt-4 space-x-4">
-        <a href="privacy.html" class="hover:text-blue-600"><i class="fa-solid fa-user-shield"></i> Aviso de privacidad</a>
-        <a href="terms.html" class="hover:text-blue-600"><i class="fa-solid fa-file-contract"></i> Términos</a>
-        <a href="donations.html" class="hover:text-blue-600"><i class="fa-solid fa-heart"></i> Donaciones</a>
-        <a href="services.html" class="hover:text-blue-600"><i class="fa-solid fa-briefcase"></i> Servicios</a>
-        <a href="contact.html" class="hover:text-blue-600"><i class="fa-solid fa-envelope"></i> Contacto</a>
-      </div>
+        <div class="last-updated">
+            <strong>Última actualización:</strong> Julio 2025
+        </div>
+
+        <div class="content-wrapper">
+            <div class="grid-layout">
+                <div class="sidebar">
+                    <h3>📋 Índice de Contenidos</h3>
+                    <ul class="toc">
+                        <li><a href="#section1">1. Aceptación de los Términos</a></li>
+                        <li><a href="#section2">2. Descripción de la Plataforma</a></li>
+                        <li><a href="#section3">3. Ámbito Territorial</a></li>
+                        <li><a href="#section4">4. Elegibilidad de Usuario</a></li>
+                        <li><a href="#section5">5. Registro y Acceso</a></li>
+                        <li><a href="#section6">6. Uso Adecuado</a></li>
+                        <li><a href="#section7">7. Derechos de Profesores</a></li>
+                        <li><a href="#section8">8. Sistema SchoolCoins</a></li>
+                        <li><a href="#section9">9. Propiedad Intelectual</a></li>
+                        <li><a href="#section10">10. Privacidad y Datos</a></li>
+                        <li><a href="#section11">11. Inteligencia Artificial</a></li>
+                        <li><a href="#section12">12. Disponibilidad del Servicio</a></li>
+                        <li><a href="#section13">13. Suspensión y Terminación</a></li>
+                        <li><a href="#section14">14. Modificaciones</a></li>
+                        <li><a href="#section15">15. Disposiciones Generales</a></li>
+                        <li><a href="#section16">16. Contacto y Soporte</a></li>
+                    </ul>
+                </div>
+
+                <div class="main-content">
+                    <section id="section1" class="section">
+                        <h2><span class="section-number">1</span>Aceptación de los Términos</h2>
+                        
+                        <div class="highlight-box">
+                            <strong>Importante:</strong> Al usar SchoolCoins, aceptas estos términos completamente. Si eres menor de edad, necesitas la autorización de tus padres o tutores.
+                        </div>
+
+                        <p>Bienvenido a <strong>SchoolCoins</strong>, una aplicación educativa integrada en Discord diseñada para que profesores asignen tareas y alumnos las entreguen en formato digital.</p>
+
+                        <p>Al acceder o utilizar SchoolCoins, declares que has leído, entendido y aceptado estos Términos y Condiciones de Uso. Si no estás de acuerdo, deberás abstenerte de utilizar la plataforma.</p>
+
+                        <h3>Para menores de edad:</h3>
+                        <ul>
+                            <li>Un padre, madre o tutor legal debe leer y aceptar estos términos</li>
+                            <li>Debes cumplir con los requisitos de edad mínima de Discord</li>
+                            <li>La supervisión de un adulto responsable es requerida</li>
+                        </ul>
+                    </section>
+
+                    <section id="section2" class="section">
+                        <h2><span class="section-number">2</span>Descripción de la Plataforma</h2>
+                        
+                        <p>SchoolCoins es un servicio educativo que funciona mediante un bot en Discord con los siguientes propósitos:</p>
+
+                        <div class="info-box">
+                            <h3>🎯 Funcionalidades principales:</h3>
+                            <ul>
+                                <li><strong>Gestión de tareas:</strong> Los profesores pueden crear y asignar tareas</li>
+                                <li><strong>Entrega digital:</strong> Los alumnos suben sus tareas en formato de imágenes u otros archivos</li>
+                                <li><strong>Sistema de recompensas:</strong> Los estudiantes acumulan "SchoolCoins" virtuales</li>
+                                <li><strong>Retroalimentación:</strong> Comentarios automáticos y del profesor</li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <strong>Nota importante:</strong> SchoolCoins NO es una red social. No permite comunicación directa entre usuarios. Toda comunicación debe realizarse por los canales oficiales de la institución.
+                        </div>
+                    </section>
+
+                    <section id="section3" class="section">
+                        <h2><span class="section-number">3</span>Ámbito Territorial y Ley Aplicable</h2>
+                        
+                        <p>Actualmente, SchoolCoins está disponible para usuarios ubicados en <strong>México</strong> y se rige por las leyes mexicanas.</p>
+
+                        <h3>Expansión futura:</h3>
+                        <p>Planeamos expandirnos a Estados Unidos y otros países de Latinoamérica, cumpliendo con las regulaciones locales como COPPA y otras normativas de protección de datos.</p>
+                    </section>
+
+                    <section id="section4" class="section">
+                        <h2><span class="section-number">4</span>Elegibilidad de Usuario</h2>
+                        
+                        <div class="info-box">
+                            <h3>👥 Usuarios permitidos:</h3>
+                            <ul>
+                                <li><strong>Docentes:</strong> Mayores de 18 años con rol educativo</li>
+                                <li><strong>Alumnos:</strong> Estudiantes de cualquier edad (con consentimiento parental si son menores)</li>
+                                <li><strong>Instituciones:</strong> Representantes autorizados de escuelas</li>
+                            </ul>
+                        </div>
+
+                        <div class="highlight-box">
+                            <strong>Requisito de Discord:</strong> Todos los usuarios deben tener una cuenta válida de Discord y cumplir con sus términos de servicio, incluyendo la edad mínima de 13 años.
+                        </div>
+
+                        <h3>Consentimiento parental:</h3>
+                        <p>Para usuarios menores de 18 años, se requiere consentimiento expreso de padres o tutores, quienes se responsabilizan del cumplimiento de estos términos por parte del menor.</p>
+                    </section>
+
+                    <section id="section5" class="section">
+                        <h2><span class="section-number">5</span>Registro y Acceso</h2>
+                        
+                        <p>El acceso a SchoolCoins es simple y seguro:</p>
+                        
+                        <ul>
+                            <li><strong>Sin registro separado:</strong> Funciona directamente con tu cuenta de Discord</li>
+                            <li><strong>Identificación automática:</strong> Te reconocemos por tu ID de Discord</li>
+                            <li><strong>Seguridad:</strong> Nunca pedimos tus credenciales de Discord</li>
+                            <li><strong>Configuración institucional:</strong> Tu escuela puede requerir datos adicionales para la gestión académica</li>
+                        </ul>
+                    </section>
+
+                    <section id="section6" class="section">
+                        <h2><span class="section-number">6</span>Uso Adecuado de la Plataforma</h2>
+                        
+                        <div class="warning-box">
+                            <h3>⚠️ Compromisos del usuario:</h3>
+                            <ul>
+                                <li><strong>Uso educativo únicamente:</strong> No comercial ni publicitario</li>
+                                <li><strong>Contenido apropiado:</strong> Solo tareas y material educativo</li>
+                                <li><strong>Respeto a la comunidad:</strong> Comportamiento adecuado en Discord</li>
+                                <li><strong>Sin mensajería:</strong> No es un medio de comunicación general</li>
+                            </ul>
+                        </div>
+
+                        <h3>Contenido prohibido:</h3>
+                        <ul>
+                            <li>Material ilegal, violento o discriminatorio</li>
+                            <li>Información personal de terceros sin autorización</li>
+                            <li>Contenido que infrinja derechos de autor</li>
+                            <li>Malware o código dañino</li>
+                        </ul>
+                    </section>
+
+                    <section id="section7" class="section">
+                        <h2><span class="section-number">7</span>Derechos y Responsabilidades de Profesores</h2>
+                        
+                        <div class="info-box">
+                            <h3>👨‍🏫 Facultades del profesor:</h3>
+                            <ul>
+                                <li><strong>Configuración:</strong> Administrar el bot y configurar opciones</li>
+                                <li><strong>Moderación:</strong> Supervisar y aprobar contenido</li>
+                                <li><strong>Gestión de datos:</strong> Usar información solo para fines educativos</li>
+                                <li><strong>Definición de premios:</strong> Establecer recompensas por SchoolCoins</li>
+                            </ul>
+                        </div>
+
+                        <p>Los profesores e instituciones deben cumplir con las políticas de privacidad y reglamentos escolares aplicables al manejo de información estudiantil.</p>
+                    </section>
+
+                    <section id="section8" class="section">
+                        <h2><span class="section-number">8</span>Sistema de Recompensas SchoolCoins</h2>
+                        
+                        <div class="highlight-box">
+                            <h3>🪙 Sobre los SchoolCoins:</h3>
+                            <ul>
+                                <li><strong>Puntos virtuales:</strong> Sin valor monetario real</li>
+                                <li><strong>Obtención:</strong> Completando tareas y cumpliendo criterios</li>
+                                <li><strong>Canje:</strong> Solo por recompensas educativas definidas por el profesor</li>
+                                <li><strong>Personales:</strong> No transferibles entre usuarios</li>
+                            </ul>
+                        </div>
+
+                        <p>Los SchoolCoins pueden canjearse por puntos extra, reconocimientos virtuales, privilegios en clase o insignias, según defina cada profesor.</p>
+                    </section>
+
+                    <section id="section9" class="section">
+                        <h2><span class="section-number">9</span>Propiedad Intelectual</h2>
+                        
+                        <h3>Propiedad de la plataforma:</h3>
+                        <p>SchoolCoins y todos sus componentes son propiedad de sus desarrolladores y están protegidos por las leyes de propiedad intelectual.</p>
+
+                        <h3>Contenido del usuario:</h3>
+                        <p>Mantienes los derechos sobre tus tareas y contenido. Al subirlo, otorgas a SchoolCoins una licencia limitada para operar el servicio educativo.</p>
+                    </section>
+
+                    <section id="section10" class="section">
+                        <h2><span class="section-number">10</span>Privacidad y Protección de Datos</h2>
+                        
+                        <div class="info-box">
+                            <h3>🔒 Datos que recopilamos:</h3>
+                            <ul>
+                                <li><strong>Identificador de Discord:</strong> Para vincular tareas y puntos</li>
+                                <li><strong>Contenido de tareas:</strong> Imágenes y archivos enviados</li>
+                                <li><strong>Metadatos de uso:</strong> Fechas, calificaciones, puntos acumulados</li>
+                                <li><strong>Información opcional:</strong> Datos proporcionados por la institución</li>
+                            </ul>
+                        </div>
+
+                        <h3>Protección especial para menores:</h3>
+                        <p>Tomamos medidas adicionales para proteger la privacidad de los menores, minimizando la recopilación de datos y otorgando derechos especiales a padres y tutores.</p>
+
+                        <h3>Derechos ARCO:</h3>
+                        <p>Puedes ejercer tus derechos de Acceso, Rectificación, Cancelación y Oposición contactando nuestro soporte.</p>
+                    </section>
+
+                    <section id="section11" class="section">
+                        <h2><span class="section-number">11</span>Inteligencia Artificial</h2>
+                        
+                        <div class="warning-box">
+                            <h3>🤖 Procesamiento automático:</h3>
+                            <p>SchoolCoins utiliza inteligencia artificial para analizar tareas y proporcionar retroalimentación automática. Al usar la plataforma, consientes que tus entregas sean procesadas por sistemas de IA.</p>
+                        </div>
+
+                        <h3>Limitaciones de la IA:</h3>
+                        <ul>
+                            <li>La retroalimentación automática es orientativa, no definitiva</li>
+                            <li>El profesor siempre tiene la última palabra en las calificaciones</li>
+                            <li>Pueden existir errores en las evaluaciones automáticas</li>
+                            <li>Se protege la privacidad durante el análisis</li>
+                        </ul>
+                    </section>
+
+                    <section id="section12" class="section">
+                        <h2><span class="section-number">12</span>Disponibilidad del Servicio</h2>
+                        
+                        <p>SchoolCoins se esfuerza por ofrecer un servicio confiable, pero ten en cuenta:</p>
+
+                        <ul>
+                            <li><strong>Dependencia de Discord:</strong> Nuestro funcionamiento depende de la disponibilidad de Discord</li>
+                            <li><strong>Mantenimiento:</strong> Puede haber interrupciones por actualizaciones o problemas técnicos</li>
+                            <li><strong>Limitación de responsabilidad:</strong> No garantizamos disponibilidad del 100%</li>
+                            <li><strong>Respaldo recomendado:</strong> Conserva copias de tus tareas importantes</li>
+                        </ul>
+                    </section>
+
+                    <section id="section13" class="section">
+                        <h2><span class="section-number">13</span>Suspensión y Terminación</h2>
+                        
+                        <div class="warning-box">
+                            <h3>⚠️ Motivos de suspensión:</h3>
+                            <ul>
+                                <li>Violación de estos términos</li>
+                                <li>Requerimiento legal o de Discord</li>
+                                <li>Cierre del servicio</li>
+                                <li>Inactividad prolongada</li>
+                            </ul>
+                        </div>
+
+                        <p>En caso de cierre del servicio, procuraremos avisar con 30 días de anticipación para que puedas descargar tu información.</p>
+                    </section>
+
+                    <section id="section14" class="section">
+                        <h2><span class="section-number">14</span>Modificaciones a los Términos</h2>
+                        
+                        <p>Podemos modificar estos términos para adaptarnos a cambios legales o nuevas funcionalidades. Te notificaremos de cambios importantes y su continuidad de uso implicará aceptación.</p>
+                    </section>
+
+                    <section id="section15" class="section">
+                        <h2><span class="section-number">15</span>Disposiciones Generales</h2>
+                        
+                        <ul>
+                            <li><strong>Relación:</strong> No se crea relación laboral ni de sociedad</li>
+                            <li><strong>Cesión:</strong> No puedes transferir tus derechos sin autorización</li>
+                            <li><strong>Nulidad parcial:</strong> Si una cláusula es inválida, el resto permanece vigente</li>
+                            <li><strong>Idioma:</strong> La versión en español es la legalmente vinculante</li>
+                        </ul>
+                    </section>
+
+                    <section id="section16" class="section">
+                        <h2><span class="section-number">16</span>Contacto y Soporte</h2>
+                        
+                        <div class="contact-section">
+                            <h2>📞 ¿Necesitas ayuda?</h2>
+                            <p>Estamos aquí para apoyarte en tu experiencia educativa con SchoolCoins</p>
+                            
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <span>📧</span>
+                                    <span>support@schoolcoins.app</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span>💬</span>
+                                    <span>Servidor de Discord</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span>🌐</span>
+                                    <span>schoolcoins.app</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div style="text-align: center; padding: 2rem; color: var(--text-light); border-top: 1px solid var(--border-color); margin-top: 2rem;">
+                        <p><strong>¡Gracias por usar SchoolCoins!</strong></p>
+                        <p>Nos comprometemos a brindar una herramienta útil y segura para apoyar tu educación.</p>
+                        <p style="margin-top: 1rem;">🎓 ¡Mucho éxito en tus actividades académicas!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </footer>
 
+    <script>
+        // Scroll progress indicator
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = progress + '%';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active section highlighting
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.toc a');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
